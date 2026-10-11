@@ -1,0 +1,53 @@
+/* Estilos que Tailwind no cubre con clases utilitarias */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Compensa la barra de navegación fija al saltar a una sección */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Texto con degradado azul (titulares) */
+.text-gradient-blue {
+  background-image: linear-gradient(90deg, #45B0F0 0%, #3A6FE6 50%, #2F35D6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Enlace activo del menú (lo asigna main.js según la sección visible) */
+.nav-link.is-active {
+  color: #E8562A;
+}
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+/* Aparición suave al hacer scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
