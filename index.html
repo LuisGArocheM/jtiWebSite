@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JTI Soluciones | Consultoría tecnológica para empresas en crecimiento</title>
-  <meta name="description" content="JTI Soluciones: infraestructura, desarrollo de software, biométricos, equipos de cómputo y soporte técnico para empresas que quieren crecer sin fricciones." />
+  <title>ARNOSTEK | Tu aliado digital en integración tecnológica</title>
+  <meta name="description" content="ARNOSTEK: desarrollo web, licenciamiento de software, infraestructura de TI y consultoría tecnológica para empresas en crecimiento." />
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind (CDN para prototipo; en producción usar el CLI de Tailwind) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,587 +18,360 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
-<body class="bg-surface-page font-sans text-neutral-800 antialiased">
-
-  <!-- Fondo decorativo -->
-  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute -left-40 top-40 h-[520px] w-[520px] rounded-full bg-sky-200/30 blur-3xl"></div>
-    <div class="absolute -right-32 top-[560px] h-[480px] w-[480px] rounded-full bg-violet-200/30 blur-3xl"></div>
-  </div>
+<body class="bg-surface-page font-sans text-slate-700 antialiased">
 
   <!-- =========================================================
-       NAVEGACIÓN
+       MENÚ FLOTANTE SUPERIOR
        ========================================================= -->
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-surface-line/80 bg-surface-page/80 backdrop-blur-md">
-    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Principal">
+  <header class="fixed inset-x-0 top-4 z-50 px-4">
+    <nav data-navbar
+         class="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-white/10 bg-brand-navy/80 py-2 pl-4 pr-2 text-white backdrop-blur-xl transition-shadow"
+         aria-label="Principal">
 
-      <a href="#inicio" class="flex items-end gap-0.5 select-none" aria-label="JTI Soluciones - inicio">
-        <!-- Reemplazar por <img src="assets/img/logo-jti.svg" alt="JTI Soluciones" class="h-9"> -->
-        <span class="text-3xl font-extrabold italic leading-none tracking-tighter text-brand-orange">JTI</span>
-        <span class="flex flex-col leading-none">
-          <span class="font-mono text-sm font-bold italic text-brand-sky">&lt;/&gt;</span>
-          <span class="text-[9px] font-semibold italic text-neutral-500">{...SOLUCIONES}</span>
+      <a href="#inicio" class="flex items-center gap-2" aria-label="ARNOSTEK - inicio">
+        <!-- Reemplazar por <img src="assets/img/logo-arnostek.png" alt="ARNOSTEK" class="h-9 w-9"> -->
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-cyan to-brand-blue text-brand-night">
+          <i data-lucide="trending-up" class="h-5 w-5"></i>
         </span>
+        <span class="font-display text-lg font-bold tracking-wide">ARNOSTEK</span>
       </a>
 
-      <ul class="hidden items-center gap-8 text-sm text-neutral-600 md:flex">
-        <li><a href="#servicios" class="nav-link relative transition hover:text-brand-ink">Servicios</a></li>
-        <li><a href="#proceso" class="nav-link relative transition hover:text-brand-ink">Proceso</a></li>
-        <li><a href="#tecnologias" class="nav-link relative transition hover:text-brand-ink">Tecnologías</a></li>
-        <li><a href="#nosotros" class="nav-link relative transition hover:text-brand-ink">Nosotros</a></li>
+      <ul class="hidden items-center gap-1 text-sm text-white/70 lg:flex">
+        <li><a href="#nosotros" class="nav-link rounded-full px-4 py-2 transition hover:text-white">Nosotros</a></li>
+        <li><a href="#servicios" class="nav-link rounded-full px-4 py-2 transition hover:text-white">Servicios</a></li>
+        <li><a href="#proceso" class="nav-link rounded-full px-4 py-2 transition hover:text-white">Proceso</a></li>
+        <li><a href="#por-que" class="nav-link rounded-full px-4 py-2 transition hover:text-white">¿Por qué nosotros?</a></li>
       </ul>
 
-      <div class="flex items-center gap-2">
-        <a href="#contacto" class="hidden rounded-lg bg-brand-cocoa px-5 py-2 text-sm font-medium text-white transition hover:bg-brand-ink sm:inline-block">
-          Contactar
+      <div class="flex items-center gap-1">
+        <a href="#contacto" class="hidden rounded-full bg-brand-cyan px-5 py-2 text-sm font-semibold text-brand-night transition hover:bg-white sm:inline-block">
+          Contáctanos
         </a>
-        <button type="button" class="rounded-lg p-2 text-brand-ink md:hidden" aria-label="Abrir menú" aria-expanded="false" data-menu-button>
+        <button type="button" class="rounded-full p-2 lg:hidden" aria-label="Abrir menú" aria-expanded="false" data-menu-button>
           <i data-lucide="menu" class="h-6 w-6"></i>
         </button>
       </div>
     </nav>
 
     <!-- Menú móvil -->
-    <div class="hidden border-t border-surface-line bg-surface-page px-4 pb-6 pt-2 md:hidden" data-mobile-menu>
-      <ul class="flex flex-col text-base font-medium text-brand-ink">
-        <li><a href="#servicios" class="block py-3">Servicios</a></li>
-        <li><a href="#proceso" class="block py-3">Proceso</a></li>
-        <li><a href="#tecnologias" class="block py-3">Tecnologías</a></li>
-        <li><a href="#nosotros" class="block py-3">Nosotros</a></li>
+    <div class="mx-auto mt-2 hidden max-w-5xl rounded-3xl border border-white/10 bg-brand-navy/95 p-4 text-white backdrop-blur-xl lg:hidden" data-mobile-menu>
+      <ul class="flex flex-col text-base font-medium">
+        <li><a href="#nosotros" class="block rounded-xl px-3 py-3 hover:bg-white/10">Nosotros</a></li>
+        <li><a href="#servicios" class="block rounded-xl px-3 py-3 hover:bg-white/10">Servicios</a></li>
+        <li><a href="#proceso" class="block rounded-xl px-3 py-3 hover:bg-white/10">Proceso</a></li>
+        <li><a href="#por-que" class="block rounded-xl px-3 py-3 hover:bg-white/10">¿Por qué nosotros?</a></li>
       </ul>
-      <a href="#contacto" class="mt-3 block rounded-lg bg-brand-cocoa py-3 text-center font-medium text-white">Contactar</a>
+      <a href="#contacto" class="mt-3 block rounded-full bg-brand-cyan py-3 text-center font-semibold text-brand-night">Contáctanos</a>
     </div>
   </header>
+
+  <!-- =========================================================
+       ACCESOS RÁPIDOS FLOTANTES
+       Escritorio: cápsula vertical a la izquierda.
+       Celular: cápsula horizontal abajo.
+       TODO: reemplazar el número de WhatsApp y el correo.
+       ========================================================= -->
+  <aside class="fixed bottom-4 left-1/2 z-40 -translate-x-1/2 md:bottom-auto md:left-5 md:top-1/2 md:-translate-x-0 md:-translate-y-1/2" aria-label="Accesos rápidos">
+    <ul class="flex gap-1 rounded-full border border-white/10 bg-brand-navy/85 p-1.5 text-white shadow-glow backdrop-blur-xl md:flex-col">
+      <li class="group relative">
+        <a href="https://wa.me/520000000000" target="_blank" rel="noopener" class="flex h-11 w-11 items-center justify-center rounded-full bg-whatsapp text-white transition hover:scale-105" aria-label="Escríbenos por WhatsApp">
+          <i data-lucide="message-circle" class="h-5 w-5"></i>
+        </a>
+        <span class="pointer-events-none absolute left-full top-1/2 ml-3 hidden -translate-y-1/2 whitespace-nowrap rounded-lg bg-brand-navy px-3 py-1.5 text-xs opacity-0 transition group-hover:opacity-100 md:block">WhatsApp</span>
+      </li>
+      <li class="group relative">
+        <a href="mailto:contacto@arnostek.com" class="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10" aria-label="Envíanos un correo">
+          <i data-lucide="mail" class="h-5 w-5"></i>
+        </a>
+        <span class="pointer-events-none absolute left-full top-1/2 ml-3 hidden -translate-y-1/2 whitespace-nowrap rounded-lg bg-brand-navy px-3 py-1.5 text-xs opacity-0 transition group-hover:opacity-100 md:block">Correo</span>
+      </li>
+      <li class="group relative">
+        <a href="#servicios" class="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10" aria-label="Ver servicios">
+          <i data-lucide="layout-grid" class="h-5 w-5"></i>
+        </a>
+        <span class="pointer-events-none absolute left-full top-1/2 ml-3 hidden -translate-y-1/2 whitespace-nowrap rounded-lg bg-brand-navy px-3 py-1.5 text-xs opacity-0 transition group-hover:opacity-100 md:block">Servicios</span>
+      </li>
+      <li class="group relative">
+        <a href="#inicio" class="flex h-11 w-11 items-center justify-center rounded-full transition hover:bg-white/10" aria-label="Volver arriba">
+          <i data-lucide="arrow-up" class="h-5 w-5"></i>
+        </a>
+        <span class="pointer-events-none absolute left-full top-1/2 ml-3 hidden -translate-y-1/2 whitespace-nowrap rounded-lg bg-brand-navy px-3 py-1.5 text-xs opacity-0 transition group-hover:opacity-100 md:block">Subir</span>
+      </li>
+    </ul>
+  </aside>
 
   <main>
 
     <!-- =========================================================
          1. HERO
          ========================================================= -->
-    <section id="inicio" class="mx-auto max-w-5xl px-4 pt-36 text-center sm:px-6 sm:pt-44">
+    <section id="inicio" class="relative overflow-hidden bg-brand-night pb-24 pt-36 text-white sm:pt-44">
+      <div aria-hidden="true" class="bg-grid absolute inset-0"></div>
+      <div aria-hidden="true" class="absolute -right-32 top-20 h-[480px] w-[480px] rounded-full bg-brand-blue/40 blur-[120px]"></div>
+      <div aria-hidden="true" class="absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full bg-brand-teal/25 blur-[120px]"></div>
 
-      <span class="inline-block rounded-full bg-brand-peach px-4 py-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-orange">
-        Consultoría tecnológica
-      </span>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 md:pl-24 lg:grid-cols-2">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 px-4 py-1.5 text-xs font-medium text-brand-cyan">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-cyan"></span>
+            Desarrollo web · Licenciamiento · Infraestructura TI
+          </span>
 
-      <h1 class="mt-8 text-4xl font-bold leading-[1.05] tracking-tighter text-brand-ink sm:text-6xl lg:text-7xl">
-        Tecnología inteligente para
-        <span class="block pb-2 text-gradient-blue">empresas modernas</span>
-      </h1>
+          <h1 class="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+            Tu aliado digital en <span class="text-gradient">integración tecnológica</span>
+          </h1>
 
-      <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-        Diseñamos, implementamos y damos soporte a la infraestructura y el software de su empresa,
-        para que su equipo se enfoque en crecer, no en apagar incendios técnicos.
-      </p>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
+            Transformamos retos operativos en ventajas competitivas a través de desarrollo web,
+            licenciamiento e infraestructura de TI.
+          </p>
 
-      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a href="#contacto"
-           class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-orange px-8 py-3.5 text-sm font-medium text-white shadow-cta transition hover:bg-brand-orange-dark sm:w-auto">
-          Agenda un diagnóstico gratuito
-          <i data-lucide="arrow-right" class="h-4 w-4"></i>
-        </a>
-        <a href="#servicios"
-           class="inline-flex w-full items-center justify-center rounded-lg border border-neutral-300 bg-white px-10 py-3.5 text-sm font-medium text-neutral-900 transition hover:bg-neutral-50 sm:w-auto">
-          Ver servicios
-        </a>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a href="#contacto"
+               class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-blue px-8 py-3.5 text-sm font-semibold text-white shadow-cta transition hover:bg-brand-blue-dark">
+              Contáctanos <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+            <a href="#servicios"
+               class="inline-flex items-center justify-center rounded-full border border-white/20 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
+              Conoce nuestros servicios
+            </a>
+          </div>
+        </div>
+
+        <!-- Gráfico del hero: circuito con flecha de crecimiento.
+             Puedes reemplazarlo por el render del logo: <img src="assets/img/hero-arnostek.png" ...> -->
+        <div class="relative mx-auto w-full max-w-md" aria-hidden="true">
+          <div class="absolute inset-10 rounded-full bg-brand-cyan/20 blur-3xl"></div>
+          <svg viewBox="0 0 400 400" class="relative w-full" fill="none">
+            <defs>
+              <linearGradient id="arrow-gradient" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#1B4BC6" />
+                <stop offset="60%" stop-color="#3B82F6" />
+                <stop offset="100%" stop-color="#5EE6E0" />
+              </linearGradient>
+            </defs>
+
+            <!-- Pistas del circuito -->
+            <g stroke="#5EE6E0" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <path class="circuit-trace" d="M60 360 V250 L100 210 V130" />
+              <path class="circuit-trace" d="M110 360 V290 L150 250 V180" />
+              <path class="circuit-trace" d="M250 360 V300 L290 260 V200" />
+              <path class="circuit-trace" d="M300 360 V320 L340 280 V240" />
+              <path class="circuit-trace" d="M170 360 V320 H220 V270" />
+            </g>
+            <g fill="#060A13" stroke="#5EE6E0" stroke-width="3">
+              <circle cx="100" cy="122" r="9" />
+              <circle cx="150" cy="172" r="9" />
+              <circle cx="290" cy="192" r="9" />
+              <circle cx="340" cy="232" r="9" />
+              <circle cx="220" cy="262" r="9" />
+            </g>
+
+            <!-- Flecha de crecimiento -->
+            <path d="M40 330 C 130 300, 200 230, 330 80" stroke="url(#arrow-gradient)" stroke-width="18" stroke-linecap="round" />
+            <path d="M285 70 L345 62 L332 122 Z" fill="#5EE6E0" />
+          </svg>
+        </div>
       </div>
+    </section>
 
-      <!-- Especialidades -->
-      <div class="mx-auto mt-14 max-w-3xl border-t border-neutral-200/70 pt-8">
-        <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 font-mono text-xs uppercase tracking-wider text-neutral-500">
-          <li class="flex items-center gap-1.5"><i data-lucide="square-terminal" class="h-4 w-4"></i>Integración de IA</li>
-          <li class="flex items-center gap-1.5"><i data-lucide="cloud" class="h-4 w-4"></i>Cloud</li>
-          <li class="flex items-center gap-1.5"><i data-lucide="shield-check" class="h-4 w-4"></i>Ciberseguridad</li>
-          <li class="flex items-center gap-1.5"><i data-lucide="drafting-compass" class="h-4 w-4"></i>Diseño de sistemas</li>
+    <!-- =========================================================
+         2. NOSOTROS
+         ========================================================= -->
+    <section id="nosotros" class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:pl-24">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="reveal">
+          <p class="text-sm font-semibold uppercase tracking-widest text-brand-blue">Quiénes somos</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-tight text-brand-night sm:text-4xl">
+            Soluciones digitales diseñadas para impulsar el crecimiento de tu empresa
+          </h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">
+            En ARNOSTEK diseñamos sitios web a la medida y estructuramos tu infraestructura de TI.
+            Unimos consultoría estratégica y ejecución técnica para crear soluciones digitales que
+            optimizan tus procesos y hacen crecer tu negocio.
+          </p>
+        </div>
+
+        <ul class="reveal grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <li class="flex items-start gap-4 rounded-2xl border border-surface-line bg-surface-card p-5 shadow-card">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue"><i data-lucide="compass" class="h-5 w-5"></i></span>
+            <div>
+              <h3 class="font-semibold text-brand-night">Consultoría estratégica</h3>
+              <p class="mt-1 text-sm text-slate-600">Entendemos tu operación antes de proponer tecnología.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4 rounded-2xl border border-surface-line bg-surface-card p-5 shadow-card">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-teal/10 text-brand-teal"><i data-lucide="wrench" class="h-5 w-5"></i></span>
+            <div>
+              <h3 class="font-semibold text-brand-night">Ejecución técnica</h3>
+              <p class="mt-1 text-sm text-slate-600">Desarrollamos, instalamos y configuramos de principio a fin.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4 rounded-2xl border border-surface-line bg-surface-card p-5 shadow-card">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-cyan/20 text-brand-teal"><i data-lucide="life-buoy" class="h-5 w-5"></i></span>
+            <div>
+              <h3 class="font-semibold text-brand-night">Acompañamiento continuo</h3>
+              <p class="mt-1 text-sm text-slate-600">Mantenimiento y soporte para que todo siga funcionando.</p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
 
     <!-- =========================================================
-         2. POR QUÉ JTI (bento de beneficios)
+         3. SERVICIOS
          ========================================================= -->
-    <section id="beneficios" class="mx-auto mt-24 max-w-6xl px-4 sm:px-6">
-      <div class="grid gap-6 lg:grid-cols-3">
-
-        <!-- Tarjeta principal -->
-        <article class="reveal relative flex flex-col justify-between gap-10 overflow-hidden rounded-3xl border border-surface-line bg-surface-card p-8 lg:col-span-2 lg:row-span-2">
-          <i data-lucide="sparkles" class="absolute right-6 top-6 h-20 w-20 text-neutral-200" stroke-width="1.25"></i>
-          <div class="max-w-md">
-            <h2 class="text-3xl font-semibold tracking-tight text-neutral-900">Soluciones escalables</h2>
-            <p class="mt-4 leading-relaxed text-neutral-600">
-              Arquitecturas robustas diseñadas para crecer orgánicamente con su organización,
-              asegurando estabilidad y alto rendimiento en entornos de alta demanda.
-            </p>
-          </div>
-          <!-- Reemplazar por la imagen del Figma: assets/img/servidor.jpg -->
-          <div class="h-48 overflow-hidden rounded-2xl bg-neutral-900">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80"
-                 alt="Rack de servidores con luces azules" class="h-full w-full object-cover" loading="lazy" />
-          </div>
-        </article>
-
-        <article class="reveal flex flex-col items-center justify-center rounded-3xl border border-surface-line bg-surface-card p-8 text-center">
-          <span class="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-orange text-white shadow-md shadow-orange-500/30">
-            <i data-lucide="gauge" class="h-6 w-6"></i>
-          </span>
-          <h3 class="mt-5 text-2xl font-semibold text-neutral-900">Rendimiento optimizado</h3>
-          <p class="mt-2 text-sm text-neutral-600">Eficiencia máxima en cada línea de código.</p>
-        </article>
-
-        <article class="reveal flex flex-col items-center justify-center rounded-3xl bg-brand-cocoa p-8 text-center text-white">
-          <span class="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 text-brand-orange">
-            <i data-lucide="lock" class="h-6 w-6"></i>
-          </span>
-          <h3 class="mt-5 text-2xl font-semibold">Seguridad de grado bancario</h3>
-          <p class="mt-2 text-sm text-white/70">Protocolos rigurosos para proteger sus datos y los de sus clientes.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         3. DESAFÍOS → SOLUCIONES
-         ========================================================= -->
-    <section id="desafios" class="mx-auto mt-32 max-w-6xl px-4 sm:px-6">
-      <header class="reveal mx-auto max-w-2xl text-center">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-peach px-4 py-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-orange">
-          <i data-lucide="badge-check" class="h-3.5 w-3.5"></i> Diagnóstico
-        </span>
-        <h2 class="mt-6 text-3xl font-bold tracking-tight text-brand-ink sm:text-5xl">
-          ¿Le suena familiar?
-        </h2>
-        <p class="mt-4 text-neutral-600">
-          Estos son los cuellos de botella que más frenan a las empresas en crecimiento, y cómo los resolvemos.
-        </p>
-      </header>
-
-      <div class="mt-14 grid gap-6 md:grid-cols-2">
-
-        <article class="reveal rounded-2xl border border-orange-100 bg-surface-card">
-          <div class="flex items-center gap-3 border-b border-orange-100 px-6 py-5">
-            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="refresh-cw-off" class="h-5 w-5"></i></span>
-            <h3 class="text-sm font-semibold uppercase tracking-wide text-brand-ink">Fallas de sincronización</h3>
-          </div>
-          <div class="space-y-5 p-6">
-            <ul class="space-y-1.5 text-sm text-neutral-600">
-              <li>• Discrepancia de datos entre sucursales.</li>
-              <li>• Pérdida intermitente de registros críticos.</li>
-            </ul>
-            <div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4">
-              <p class="flex items-center gap-1.5 text-xs font-semibold uppercase text-emerald-700"><i data-lucide="circle-check" class="h-4 w-4"></i> Solución JTI</p>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-700">Protocolos de redundancia y bases de datos distribuidas con validación de integridad en tiempo real.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="reveal rounded-2xl border border-orange-100 bg-surface-card">
-          <div class="flex items-center gap-3 border-b border-orange-100 px-6 py-5">
-            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="user-x" class="h-5 w-5"></i></span>
-            <h3 class="text-sm font-semibold uppercase tracking-wide text-brand-ink">Incidencias de asistencia</h3>
-          </div>
-          <div class="space-y-5 p-6">
-            <ul class="space-y-1.5 text-sm text-neutral-600">
-              <li>• Reportes manuales inconsistentes.</li>
-              <li>• Tiempo de respuesta de soporte excedido.</li>
-            </ul>
-            <div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4">
-              <p class="flex items-center gap-1.5 text-xs font-semibold uppercase text-emerald-700"><i data-lucide="circle-check" class="h-4 w-4"></i> Solución JTI</p>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-700">Monitoreo automatizado con tickets inteligentes y escalamiento basado en SLAs.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="reveal rounded-2xl border border-orange-100 bg-surface-card">
-          <div class="flex items-center gap-3 border-b border-orange-100 px-6 py-5">
-            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="gauge" class="h-5 w-5"></i></span>
-            <h3 class="text-sm font-semibold uppercase tracking-wide text-brand-ink">Lentitud de servidores</h3>
-          </div>
-          <div class="space-y-5 p-6">
-            <ul class="space-y-1.5 text-sm text-neutral-600">
-              <li>• Latencia excesiva al cargar aplicaciones.</li>
-              <li>• Cuellos de botella en el procesamiento de datos.</li>
-            </ul>
-            <div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4">
-              <p class="flex items-center gap-1.5 text-xs font-semibold uppercase text-emerald-700"><i data-lucide="circle-check" class="h-4 w-4"></i> Solución JTI</p>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-700">Optimización de arquitectura cloud y on-premise, balanceo de carga y tuning de bases de datos.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="reveal rounded-2xl border border-orange-100 bg-surface-card">
-          <div class="flex items-center gap-3 border-b border-orange-100 px-6 py-5">
-            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="network" class="h-5 w-5"></i></span>
-            <h3 class="text-sm font-semibold uppercase tracking-wide text-brand-ink">Errores de red y configuración</h3>
-          </div>
-          <div class="space-y-5 p-6">
-            <ul class="space-y-1.5 text-sm text-neutral-600">
-              <li>• Desconexiones imprevistas de estaciones de trabajo.</li>
-              <li>• Conflictos de IPs y vulnerabilidades expuestas.</li>
-            </ul>
-            <div class="rounded-xl border border-emerald-100 bg-emerald-50/60 p-4">
-              <p class="flex items-center gap-1.5 text-xs font-semibold uppercase text-emerald-700"><i data-lucide="circle-check" class="h-4 w-4"></i> Solución JTI</p>
-              <p class="mt-2 text-sm leading-relaxed text-neutral-700">Reestructuración de topología, segmentación VLAN y firewalls de última generación.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         4. SERVICIOS
-         ========================================================= -->
-    <section id="servicios" class="mx-auto mt-32 max-w-6xl px-4 sm:px-6">
-      <header class="reveal max-w-2xl">
-        <span class="inline-block rounded-full bg-brand-peach px-4 py-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-orange">Catálogo de soluciones</span>
-        <h2 class="mt-6 text-3xl font-bold tracking-tight text-brand-ink sm:text-5xl">Infraestructura técnica para el éxito corporativo.</h2>
-        <p class="mt-4 text-neutral-600">Servicios integrales de hardware, software y consultoría técnica especializada, en un solo proveedor.</p>
-      </header>
-
-      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-        <article class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card transition hover:-translate-y-1 hover:border-orange-200">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="code-xml" class="h-5 w-5"></i></span>
-          <h3 class="mt-5 text-lg font-semibold text-brand-ink">Desarrollo de software</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Aplicaciones web, móviles y herramientas internas a medida con enfoque en la experiencia de usuario.</p>
-          <ul class="mt-5 space-y-2 text-sm text-neutral-800">
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Metodologías ágiles (Scrum)</li>
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Código escalable y documentado</li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card transition hover:-translate-y-1 hover:border-orange-200">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="server" class="h-5 w-5"></i></span>
-          <h3 class="mt-5 text-lg font-semibold text-brand-ink">Infraestructura y servidores</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Diseño y despliegue de red, servidores físicos y virtualización de alto rendimiento.</p>
-          <ul class="mt-5 space-y-2 text-sm text-neutral-800">
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Monitoreo 24/7 de disponibilidad</li>
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Escalabilidad garantizada</li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card transition hover:-translate-y-1 hover:border-orange-200">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="fingerprint" class="h-5 w-5"></i></span>
-          <h3 class="mt-5 text-lg font-semibold text-brand-ink">Biométricos y asistencia</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Control de acceso y gestión de tiempo con reconocimiento facial, dactilar e iris.</p>
-          <ul class="mt-5 space-y-2 text-sm text-neutral-800">
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Integración con API de terceros</li>
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Reportes automatizados en tiempo real</li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card transition hover:-translate-y-1 hover:border-orange-200">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="laptop" class="h-5 w-5"></i></span>
-          <h3 class="mt-5 text-lg font-semibold text-brand-ink">Equipos de cómputo</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Suministro y mantenimiento de estaciones de trabajo, portátiles y periféricos de última generación.</p>
-          <ul class="mt-5 space-y-2 text-sm text-neutral-800">
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Garantía extendida onsite</li>
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Configuración de software base</li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card transition hover:-translate-y-1 hover:border-orange-200">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="printer" class="h-5 w-5"></i></span>
-          <h3 class="mt-5 text-lg font-semibold text-brand-ink">Equipos de oficina</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Impresión, escaneo y gestión documental digitalizada para optimizar flujos de trabajo.</p>
-          <ul class="mt-5 space-y-2 text-sm text-neutral-800">
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Suministro gestionado de insumos</li>
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Reducción de costos de impresión</li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card transition hover:-translate-y-1 hover:border-orange-200">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="cpu" class="h-5 w-5"></i></span>
-          <h3 class="mt-5 text-lg font-semibold text-brand-ink">Equipos especializados</h3>
-          <p class="mt-2 text-sm leading-relaxed text-neutral-600">Hardware crítico para entornos industriales, laboratorios o requerimientos técnicos de nicho.</p>
-          <ul class="mt-5 space-y-2 text-sm text-neutral-800">
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Búsqueda global de componentes</li>
-            <li class="flex items-center gap-2"><i data-lucide="circle-check" class="h-4 w-4 text-brand-orange"></i>Instalación técnica certificada</li>
-          </ul>
-        </article>
-
-        <!-- Servicio destacado (ancho completo) -->
-        <article class="reveal grid gap-6 rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card sm:col-span-2 lg:col-span-3 lg:grid-cols-[1fr_2fr] lg:items-center">
-          <div>
-            <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-peach text-brand-orange"><i data-lucide="users" class="h-5 w-5"></i></span>
-            <h3 class="mt-5 text-lg font-semibold text-brand-ink">Soporte y asesoría Nómina / RH</h3>
-            <p class="mt-2 text-sm leading-relaxed text-neutral-600">Acompañamiento especializado para optimizar procesos de capital humano y sistemas de nómina complejos.</p>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-xl bg-white p-5 ring-1 ring-surface-line">
-              <p class="flex items-center gap-2 text-sm font-medium text-brand-ink"><i data-lucide="user-cog" class="h-4 w-4 text-brand-orange"></i>Acompañamiento técnico</p>
-              <p class="mt-2 text-sm text-neutral-600">Soporte directo en la integración de datos y seguridad de la información sensible.</p>
-            </div>
-            <div class="rounded-xl bg-white p-5 ring-1 ring-surface-line">
-              <p class="flex items-center gap-2 text-sm font-medium text-brand-ink"><i data-lucide="workflow" class="h-4 w-4 text-brand-orange"></i>Optimización de procesos</p>
-              <p class="mt-2 text-sm text-neutral-600">Automatización de flujos para reducir el margen de error en cálculos legales.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         5. PROCESO
-         ========================================================= -->
-    <section id="proceso" class="mt-32 bg-surface-card py-24">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="servicios" class="bg-white py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 md:pl-24">
         <header class="reveal mx-auto max-w-2xl text-center">
-          <span class="inline-block rounded-full bg-brand-peach px-4 py-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-orange">Metodología ágil</span>
-          <h2 class="mt-6 text-3xl font-bold tracking-tight text-brand-ink sm:text-5xl">Nuestro proceso</h2>
-          <p class="mt-4 text-neutral-600">Un flujo de trabajo estructurado, transparente y orientado a resultados. Usted sabe en qué etapa está su proyecto en todo momento.</p>
+          <p class="text-sm font-semibold uppercase tracking-widest text-brand-blue">Servicios</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-tight text-brand-night sm:text-4xl">Todo lo que tu empresa necesita en TI, con un solo aliado</h2>
         </header>
 
-        <ol class="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-6 lg:gap-4">
-          <!-- Línea conectora (solo escritorio) -->
-          <span aria-hidden="true" class="absolute left-[8%] right-[8%] top-7 hidden h-px bg-gradient-to-r from-brand-orange via-orange-300 to-orange-200 lg:block"></span>
+        <div class="mt-14 grid gap-6 lg:grid-cols-3">
 
-          <li class="reveal relative flex flex-col items-center text-center">
-            <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-brand-orange text-white shadow-cta">
-              <i data-lucide="search" class="h-5 w-5"></i>
-              <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-semibold text-brand-orange ring-1 ring-brand-orange">1</span>
-            </span>
-            <h3 class="mt-5 text-lg font-semibold text-brand-ink">Diagnóstico</h3>
-            <p class="mt-2 text-sm text-neutral-600">Identificamos puntos críticos y objetivos estratégicos de su negocio.</p>
-          </li>
-          <li class="reveal relative flex flex-col items-center text-center">
-            <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand-orange ring-1 ring-orange-200">
-              <i data-lucide="chart-column" class="h-5 w-5"></i>
-              <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-semibold text-neutral-500 ring-1 ring-neutral-300">2</span>
-            </span>
-            <h3 class="mt-5 text-lg font-semibold text-brand-ink">Análisis</h3>
-            <p class="mt-2 text-sm text-neutral-600">Evaluamos la viabilidad técnica y diseñamos la arquitectura óptima.</p>
-          </li>
-          <li class="reveal relative flex flex-col items-center text-center">
-            <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand-orange ring-1 ring-orange-200">
-              <i data-lucide="file-code" class="h-5 w-5"></i>
-              <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-semibold text-neutral-500 ring-1 ring-neutral-300">3</span>
-            </span>
-            <h3 class="mt-5 text-lg font-semibold text-brand-ink">Implementación</h3>
-            <p class="mt-2 text-sm text-neutral-600">Desarrollo ágil con estándares de calidad y seguridad de alto nivel.</p>
-          </li>
-          <li class="reveal relative flex flex-col items-center text-center">
-            <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand-orange ring-1 ring-orange-200">
-              <i data-lucide="settings" class="h-5 w-5"></i>
-              <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-semibold text-neutral-500 ring-1 ring-neutral-300">4</span>
-            </span>
-            <h3 class="mt-5 text-lg font-semibold text-brand-ink">Configuración</h3>
-            <p class="mt-2 text-sm text-neutral-600">Ajuste fino y despliegue en entornos productivos.</p>
-          </li>
-          <li class="reveal relative flex flex-col items-center text-center">
-            <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand-orange ring-1 ring-orange-200">
-              <i data-lucide="headset" class="h-5 w-5"></i>
-              <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-semibold text-neutral-500 ring-1 ring-neutral-300">5</span>
-            </span>
-            <h3 class="mt-5 text-lg font-semibold text-brand-ink">Soporte</h3>
-            <p class="mt-2 text-sm text-neutral-600">Acompañamiento continuo y resolución proactiva de incidencias.</p>
-          </li>
-          <li class="reveal relative flex flex-col items-center text-center">
-            <span class="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-brand-orange ring-1 ring-orange-200">
-              <i data-lucide="trending-up" class="h-5 w-5"></i>
-              <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-semibold text-neutral-500 ring-1 ring-neutral-300">6</span>
-            </span>
-            <h3 class="mt-5 text-lg font-semibold text-brand-ink">Seguimiento</h3>
-            <p class="mt-2 text-sm text-neutral-600">Monitoreo de KPIs y optimización constante del rendimiento.</p>
-          </li>
-        </ol>
+          <article class="reveal flex flex-col overflow-hidden rounded-3xl border border-surface-line bg-surface-card shadow-card transition hover:-translate-y-1">
+            <div class="flex h-36 items-center justify-center bg-gradient-to-br from-brand-blue to-brand-blue-dark">
+              <i data-lucide="globe" class="h-14 w-14 text-white" stroke-width="1.5"></i>
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <h3 class="font-display text-xl font-semibold text-brand-night">Desarrollo web</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Soluciones y plataformas digitales desde cero, adaptadas a los flujos de tu organización para automatizar procesos y mejorar la experiencia de usuario.</p>
+              <ul class="mt-6 space-y-2.5 text-sm text-slate-700">
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"></i>Sitios web corporativos y portales empresariales</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"></i>Arquitectura limpia, segura y de alto rendimiento</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"></i>Mantenimiento y actualización de plataformas existentes</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col overflow-hidden rounded-3xl border border-surface-line bg-surface-card shadow-card transition hover:-translate-y-1">
+            <div class="flex h-36 items-center justify-center bg-gradient-to-br from-brand-cyan to-brand-teal">
+              <i data-lucide="key-round" class="h-14 w-14 text-brand-night" stroke-width="1.5"></i>
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <h3 class="font-display text-xl font-semibold text-brand-night">Licenciamiento de software</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Suministramos y configuramos el software esencial para que tu equipo trabaje en un entorno protegido, legal y optimizado.</p>
+              <ul class="mt-6 space-y-2.5 text-sm text-slate-700">
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-teal"></i>Venta y gestión de licencias para empresas</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-teal"></i>Instalación en estaciones de trabajo y servidores</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-teal"></i>Configuración de entornos y herramientas corporativas</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-teal"></i>Soporte en la integración del licenciamiento</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col overflow-hidden rounded-3xl border border-surface-line bg-surface-card shadow-card transition hover:-translate-y-1">
+            <div class="flex h-36 items-center justify-center bg-gradient-to-br from-brand-teal to-brand-blue">
+              <i data-lucide="network" class="h-14 w-14 text-white" stroke-width="1.5"></i>
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <h3 class="font-display text-xl font-semibold text-brand-night">Consultoría e integración tecnológica</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Analizamos tu ecosistema informático e integramos tus herramientas para que funcionen de manera fluida y coordinada.</p>
+              <ul class="mt-6 space-y-2.5 text-sm text-slate-700">
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"></i>Diagnóstico y auditoría de infraestructura</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"></i>Integración de sistemas y bases de datos</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"></i>Asesoría para adquirir equipos y soluciones TI</li>
+                <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-blue"></i>Optimización de flujos e interconectividad</li>
+              </ul>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- =========================================================
-         6. TECNOLOGÍAS
+         4. PROCESO
          ========================================================= -->
-    <section id="tecnologias" class="mx-auto mt-32 max-w-6xl px-4 sm:px-6">
-      <header class="reveal mx-auto max-w-2xl text-center">
-        <span class="inline-block rounded-full bg-brand-peach px-4 py-1 text-xs font-medium uppercase tracking-[0.12em] text-brand-orange">Ecosistema técnico</span>
-        <h2 class="mt-6 text-3xl font-bold tracking-tight text-brand-ink sm:text-5xl">
-          Tecnologías que impulsan la <span class="text-gradient-blue">transformación digital.</span>
-        </h2>
-        <p class="mt-4 text-neutral-600">Herramientas probadas y robustas para que cada solución sea escalable, segura y eficiente.</p>
-      </header>
-
-      <div class="mt-14 grid gap-6 lg:grid-cols-3">
-
-        <article class="reveal rounded-3xl border border-surface-line bg-surface-card p-8 lg:col-span-2">
-          <h3 class="flex items-center gap-2 text-xl font-semibold text-brand-ink"><i data-lucide="cloud" class="h-5 w-5 text-brand-indigo"></i>Infraestructura cloud</h3>
-          <p class="mt-3 max-w-lg text-sm leading-relaxed text-neutral-600">Arquitecturas resilientes en la nube, optimizando costos y asegurando alta disponibilidad para sus aplicaciones críticas.</p>
-          <ul class="mt-6 flex flex-wrap gap-3 text-sm text-neutral-800">
-            <li class="rounded-lg border border-surface-line bg-white px-4 py-2">Amazon Web Services</li>
-            <li class="rounded-lg border border-surface-line bg-white px-4 py-2">Microsoft Azure</li>
-            <li class="rounded-lg border border-surface-line bg-white px-4 py-2">Google Cloud Platform</li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-3xl border border-surface-line bg-surface-card p-8">
-          <h3 class="flex items-center gap-2 text-xl font-semibold text-brand-ink"><i data-lucide="database" class="h-5 w-5 text-brand-indigo"></i>Bases de datos</h3>
-          <ul class="mt-5 divide-y divide-surface-line text-sm">
-            <li class="flex justify-between py-3"><span class="text-brand-ink">PostgreSQL</span><span class="text-xs text-neutral-500">Relacional</span></li>
-            <li class="flex justify-between py-3"><span class="text-brand-ink">MongoDB</span><span class="text-xs text-neutral-500">NoSQL</span></li>
-            <li class="flex justify-between py-3"><span class="text-brand-ink">SQL Server</span><span class="text-xs text-neutral-500">Corporativo</span></li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-3xl border border-surface-line bg-surface-card p-8">
-          <h3 class="flex items-center gap-2 text-xl font-semibold text-brand-ink"><i data-lucide="code-xml" class="h-5 w-5 text-brand-indigo"></i>Desarrollo</h3>
-          <ul class="mt-5 grid grid-cols-2 gap-3 text-sm">
-            <li class="rounded-lg border border-surface-line bg-white p-3"><span class="block font-medium text-brand-ink">Python</span><span class="text-neutral-500">IA y backend</span></li>
-            <li class="rounded-lg border border-surface-line bg-white p-3"><span class="block font-medium text-brand-ink">React</span><span class="text-neutral-500">Web moderna</span></li>
-            <li class="rounded-lg border border-surface-line bg-white p-3"><span class="block font-medium text-brand-ink">Node.js</span><span class="text-neutral-500">Alto rendimiento</span></li>
-            <li class="rounded-lg border border-surface-line bg-white p-3"><span class="block font-medium text-brand-ink">PHP</span><span class="text-neutral-500">Apps empresariales</span></li>
-          </ul>
-        </article>
-
-        <article class="reveal rounded-3xl border border-surface-line bg-surface-card p-8 lg:col-span-2">
-          <h3 class="flex items-center gap-2 text-xl font-semibold text-brand-ink"><i data-lucide="briefcase-business" class="h-5 w-5 text-brand-indigo"></i>Soluciones enterprise</h3>
-          <p class="mt-3 max-w-lg text-sm leading-relaxed text-neutral-600">Unificamos procesos de negocio complejos con integraciones de alto nivel y personalización de ERPs líderes.</p>
-          <ul class="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
-            <li class="rounded-xl bg-white p-4 ring-1 ring-surface-line"><span class="block font-mono text-lg text-brand-ink">SAP</span><span class="text-xs text-neutral-500">Implementación</span></li>
-            <li class="rounded-xl bg-white p-4 ring-1 ring-surface-line"><span class="block font-mono text-lg text-brand-ink">Oracle</span><span class="text-xs text-neutral-500">Consultoría</span></li>
-            <li class="rounded-xl bg-white p-4 ring-1 ring-surface-line"><span class="block font-mono text-lg text-brand-ink">APIs</span><span class="text-xs text-neutral-500">Personalizadas</span></li>
-            <li class="rounded-xl bg-white p-4 ring-1 ring-surface-line"><span class="block font-mono text-lg text-brand-ink">ESB</span><span class="text-xs text-neutral-500">Middleware</span></li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         7. NOSOTROS
-         ========================================================= -->
-    <section id="nosotros" class="mx-auto mt-32 max-w-6xl px-4 sm:px-6">
+    <section id="proceso" class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:pl-24">
       <header class="reveal max-w-2xl">
-        <span class="text-xs font-medium uppercase tracking-[0.12em] text-brand-orange">Conoce JTI</span>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight text-brand-ink sm:text-5xl">Impulsando el futuro empresarial</h2>
-        <p class="mt-4 text-neutral-600">Transformamos la complejidad técnica en ventaja competitiva, construyendo puentes entre la visión de negocio y la ejecución tecnológica.</p>
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-blue">Cómo trabajamos</p>
+        <h2 class="mt-3 font-display text-3xl font-bold tracking-tight text-brand-night sm:text-4xl">Del diagnóstico al soporte, sin cabos sueltos</h2>
       </header>
 
-      <div class="mt-12 grid gap-6 lg:grid-cols-3">
+      <ol class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <li class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card">
+          <span class="font-display text-4xl font-bold text-gradient">01</span>
+          <h3 class="mt-4 font-semibold text-brand-night">Diagnóstico</h3>
+          <p class="mt-2 text-sm text-slate-600">Revisamos tu infraestructura, software y procesos actuales.</p>
+        </li>
+        <li class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card">
+          <span class="font-display text-4xl font-bold text-gradient">02</span>
+          <h3 class="mt-4 font-semibold text-brand-night">Propuesta</h3>
+          <p class="mt-2 text-sm text-slate-600">Diseñamos la solución a la medida, con alcance y tiempos claros.</p>
+        </li>
+        <li class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card">
+          <span class="font-display text-4xl font-bold text-gradient">03</span>
+          <h3 class="mt-4 font-semibold text-brand-night">Implementación</h3>
+          <p class="mt-2 text-sm text-slate-600">Desarrollamos, instalamos e integramos todo lo necesario.</p>
+        </li>
+        <li class="reveal rounded-2xl border border-surface-line bg-surface-card p-6 shadow-card">
+          <span class="font-display text-4xl font-bold text-gradient">04</span>
+          <h3 class="mt-4 font-semibold text-brand-night">Puesta a punto y soporte</h3>
+          <p class="mt-2 text-sm text-slate-600">Afinamos, capacitamos y te damos mantenimiento continuo.</p>
+        </li>
+      </ol>
+    </section>
 
-        <article class="reveal relative overflow-hidden rounded-3xl border border-surface-line bg-surface-card p-8 lg:col-span-2">
-          <i data-lucide="rocket" class="absolute right-6 top-6 h-24 w-24 text-neutral-200" stroke-width="1.25"></i>
-          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-peach text-brand-orange"><i data-lucide="flag" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 text-2xl font-semibold text-brand-ink">Nuestra misión</h3>
-          <p class="mt-3 max-w-xl leading-relaxed text-neutral-600">Democratizar el acceso a tecnologías de alto impacto para empresas en crecimiento, con soluciones de software escalables, seguras y centradas en el usuario que optimicen cada proceso interno.</p>
-        </article>
+    <!-- =========================================================
+         5. ¿POR QUÉ NOSOTROS?
+         ========================================================= -->
+    <section id="por-que" class="relative overflow-hidden bg-brand-night py-24 text-white">
+      <div aria-hidden="true" class="absolute left-1/2 top-0 h-80 w-[640px] -translate-x-1/2 rounded-full bg-brand-blue/30 blur-[120px]"></div>
 
-        <!-- Cifras: actualiza con datos reales conforme crezcan -->
-        <article class="reveal flex flex-col justify-between rounded-3xl bg-gradient-to-br from-brand-cocoa via-brand-cocoa to-[#4a1a0e] p-8 text-white">
-          <h3 class="text-xl font-semibold">Compromiso desde el primer día</h3>
-          <dl class="mt-6 grid grid-cols-2 gap-6">
-            <div class="flex flex-col">
-              <dt class="text-[11px] uppercase tracking-widest text-white/60">Proyectos finalizados</dt>
-              <dd class="order-first text-4xl font-bold">10+</dd>
-            </div>
-            <div class="flex flex-col">
-              <dt class="text-[11px] uppercase tracking-widest text-white/60">Monitoreo</dt>
-              <dd class="order-first text-4xl font-bold">24/7</dd>
-            </div>
-          </dl>
-          <p class="mt-8 border-t border-white/15 pt-6 text-sm italic text-white/80">"Construyendo confianza a través del código desde el primer día."</p>
-        </article>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 md:pl-24">
+        <header class="reveal max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-widest text-brand-cyan">¿Por qué nosotros?</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">Tecnología que crece al ritmo de tu empresa</h2>
+        </header>
 
-        <article class="reveal rounded-3xl border border-surface-line bg-surface-card p-8">
-          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-peach text-brand-orange"><i data-lucide="eye" class="h-5 w-5"></i></span>
-          <h3 class="mt-6 text-2xl font-semibold text-brand-ink">Nuestra visión</h3>
-          <p class="mt-3 leading-relaxed text-neutral-600">Ser el socio tecnológico preferido para la transformación digital, reconocidos por nuestra integridad técnica y diseño centrado en las personas.</p>
-        </article>
-
-        <article class="reveal rounded-3xl border border-surface-line bg-white p-8 lg:col-span-2">
-          <h3 class="text-2xl font-semibold text-brand-ink">Nuestros valores</h3>
-          <ul class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <li>
-              <i data-lucide="lightbulb" class="h-6 w-6 text-brand-orange"></i>
-              <p class="mt-3 font-medium text-brand-ink">Innovación</p>
-              <p class="mt-1 text-sm text-neutral-600">Buscamos siempre lo extraordinario.</p>
-            </li>
-            <li>
-              <i data-lucide="handshake" class="h-6 w-6 text-brand-orange"></i>
-              <p class="mt-3 font-medium text-brand-ink">Confianza</p>
-              <p class="mt-1 text-sm text-neutral-600">Relaciones honestas y duraderas.</p>
-            </li>
-            <li>
-              <i data-lucide="badge-check" class="h-6 w-6 text-brand-orange"></i>
-              <p class="mt-3 font-medium text-brand-ink">Excelencia</p>
-              <p class="mt-1 text-sm text-neutral-600">Calidad sin compromisos técnicos.</p>
-            </li>
-            <li>
-              <i data-lucide="zap" class="h-6 w-6 text-brand-orange"></i>
-              <p class="mt-3 font-medium text-brand-ink">Agilidad</p>
-              <p class="mt-1 text-sm text-neutral-600">Adaptación rápida al cambio.</p>
-            </li>
-          </ul>
-        </article>
-
-        <!-- Banner de enfoque tecnológico -->
-        <article class="reveal relative overflow-hidden rounded-3xl lg:col-span-3">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1800&q=80"
-               alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-r from-[#0b1a24]/95 via-[#0b1a24]/80 to-[#0b1a24]/30"></div>
-          <div class="relative max-w-xl px-8 py-16 text-white sm:px-12 sm:py-20">
-            <span class="inline-block rounded-full border border-sky-300/60 bg-sky-400/10 px-3 py-1 text-xs font-medium">Enfoque tecnológico</span>
-            <h3 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">Vanguardia en cada línea de código</h3>
-            <p class="mt-4 leading-relaxed text-white/80">Usamos frameworks robustos y arquitecturas en la nube para que su negocio no solo funcione hoy, sino que esté preparado para la escala de mañana.</p>
-          </div>
-        </article>
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+          <article class="reveal rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <i data-lucide="trending-up" class="h-8 w-8 text-brand-cyan"></i>
+            <h3 class="mt-5 font-display text-xl font-semibold">Soluciones escalables</h3>
+            <p class="mt-2 leading-relaxed text-white/70">Diseñamos herramientas y estructuras preparadas para adaptarse y crecer al ritmo de tu empresa.</p>
+          </article>
+          <article class="reveal rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <i data-lucide="refresh-ccw" class="h-8 w-8 text-brand-cyan"></i>
+            <h3 class="mt-5 font-display text-xl font-semibold">Integración completa</h3>
+            <p class="mt-2 leading-relaxed text-white/70">Cubrimos el ciclo de vida tecnológico completo: diagnóstico, desarrollo, puesta a punto y mantenimiento.</p>
+          </article>
+          <article class="reveal rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <i data-lucide="shield-check" class="h-8 w-8 text-brand-cyan"></i>
+            <h3 class="mt-5 font-display text-xl font-semibold">Software legal y protegido</h3>
+            <p class="mt-2 leading-relaxed text-white/70">Licencias en regla y entornos configurados para que tu equipo trabaje seguro y sin riesgos.</p>
+          </article>
+          <article class="reveal rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <i data-lucide="handshake" class="h-8 w-8 text-brand-cyan"></i>
+            <h3 class="mt-5 font-display text-xl font-semibold">Un solo aliado</h3>
+            <p class="mt-2 leading-relaxed text-white/70">Consultoría y ejecución en el mismo equipo: menos proveedores, menos fricción y respuestas más rápidas.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- =========================================================
-         8. CONTACTO (CTA final)
+         6. CONTACTO
          ========================================================= -->
-    <section id="contacto" class="mx-auto mt-32 max-w-6xl px-4 pb-24 sm:px-6">
-      <div class="reveal grid overflow-hidden rounded-3xl bg-brand-cocoa text-white lg:grid-cols-2">
+    <section id="contacto" class="mx-auto max-w-6xl px-4 py-24 sm:px-6 md:pl-24">
+      <div class="reveal relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-blue via-brand-blue-dark to-brand-night px-6 py-16 text-center text-white sm:px-12">
+        <div aria-hidden="true" class="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand-cyan/30 blur-3xl"></div>
+        <div class="relative">
+          <h2 class="mx-auto max-w-2xl font-display text-3xl font-bold tracking-tight sm:text-5xl">¿Listo para dar el siguiente paso?</h2>
+          <p class="mx-auto mt-5 max-w-xl text-lg text-white/75">Cuéntanos qué necesita tu empresa y con gusto te ayudamos a encontrar la solución que esperabas.</p>
 
-        <div class="relative p-8 sm:p-12">
-          <div aria-hidden="true" class="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-brand-orange/30 blur-3xl"></div>
-          <div class="relative">
-            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">¿Listo para transformar su infraestructura?</h2>
-            <p class="mt-4 leading-relaxed text-white/75">Agende un diagnóstico gratuito. Revisamos sus sistemas actuales e identificamos riesgos antes de que se conviertan en interrupciones.</p>
-            <ul class="mt-8 space-y-3 text-sm text-white/85">
-              <li class="flex items-center gap-3"><i data-lucide="circle-check" class="h-5 w-5 text-brand-orange"></i>Respuesta en menos de 24 horas</li>
-              <li class="flex items-center gap-3"><i data-lucide="circle-check" class="h-5 w-5 text-brand-orange"></i>Sin compromiso de contratación</li>
-              <li class="flex items-center gap-3"><i data-lucide="circle-check" class="h-5 w-5 text-brand-orange"></i>Propuesta a la medida de su empresa</li>
-            </ul>
+          <!-- TODO: reemplazar número de WhatsApp y correo reales -->
+          <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="https://wa.me/520000000000" target="_blank" rel="noopener"
+               class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-whatsapp px-8 py-4 font-semibold text-brand-night transition hover:brightness-110 sm:w-auto">
+              <i data-lucide="message-circle" class="h-5 w-5"></i> Escríbenos por WhatsApp
+            </a>
+            <a href="mailto:contacto@arnostek.com"
+               class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 font-semibold transition hover:bg-white/10 sm:w-auto">
+              <i data-lucide="mail" class="h-5 w-5"></i> contacto@arnostek.com
+            </a>
           </div>
         </div>
-
-        <!-- TODO: conectar el formulario (Formspree, Netlify Forms, backend propio...) en el atributo action -->
-        <form action="#" method="post" class="space-y-4 bg-white/5 p-8 sm:p-12">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <label class="block text-sm">
-              <span class="text-white/80">Nombre</span>
-              <input type="text" name="nombre" required autocomplete="name"
-                     class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-white placeholder-white/40 outline-none focus:border-brand-orange" />
-            </label>
-            <label class="block text-sm">
-              <span class="text-white/80">Empresa</span>
-              <input type="text" name="empresa" autocomplete="organization"
-                     class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-white placeholder-white/40 outline-none focus:border-brand-orange" />
-            </label>
-          </div>
-          <label class="block text-sm">
-            <span class="text-white/80">Correo electrónico</span>
-            <input type="email" name="correo" required autocomplete="email"
-                   class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-white placeholder-white/40 outline-none focus:border-brand-orange" />
-          </label>
-          <label class="block text-sm">
-            <span class="text-white/80">¿Qué necesita?</span>
-            <select name="servicio" class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-white outline-none focus:border-brand-orange [&>option]:text-brand-ink">
-              <option>Diagnóstico general</option>
-              <option>Desarrollo de software</option>
-              <option>Infraestructura y servidores</option>
-              <option>Biométricos y asistencia</option>
-              <option>Equipos de cómputo / oficina</option>
-              <option>Soporte Nómina / RH</option>
-            </select>
-          </label>
-          <label class="block text-sm">
-            <span class="text-white/80">Mensaje</span>
-            <textarea name="mensaje" rows="3"
-                      class="mt-1.5 w-full rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-white placeholder-white/40 outline-none focus:border-brand-orange"></textarea>
-          </label>
-          <button type="submit"
-                  class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-orange px-6 py-3.5 text-sm font-medium text-white shadow-cta transition hover:bg-brand-orange-dark">
-            Agendar diagnóstico gratuito <i data-lucide="arrow-right" class="h-4 w-4"></i>
-          </button>
-        </form>
       </div>
     </section>
   </main>
@@ -606,13 +379,13 @@
   <!-- =========================================================
        PIE DE PÁGINA
        ========================================================= -->
-  <footer class="border-t border-surface-line">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-neutral-500 sm:flex-row sm:px-6">
-      <p>© <span data-year></span> JTI Soluciones. Todos los derechos reservados.</p>
+  <footer class="border-t border-surface-line bg-white pb-24 md:pb-0">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:px-6 md:pl-24">
+      <p>© <span data-year></span> ARNOSTEK. Todos los derechos reservados.</p>
       <ul class="flex gap-6">
-        <li><a href="#servicios" class="hover:text-brand-orange">Servicios</a></li>
-        <li><a href="#proceso" class="hover:text-brand-orange">Proceso</a></li>
-        <li><a href="#contacto" class="hover:text-brand-orange">Contacto</a></li>
+        <li><a href="#servicios" class="hover:text-brand-blue">Servicios</a></li>
+        <li><a href="#por-que" class="hover:text-brand-blue">¿Por qué nosotros?</a></li>
+        <li><a href="#contacto" class="hover:text-brand-blue">Contacto</a></li>
       </ul>
     </div>
   </footer>

@@ -4,36 +4,46 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Compensa la barra de navegación fija al saltar a una sección */
+/* Compensa la barra flotante al saltar a una sección */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 6rem;
 }
 
-/* Texto con degradado azul (titulares) */
-.text-gradient-blue {
-  background-image: linear-gradient(90deg, #45B0F0 0%, #3A6FE6 50%, #2F35D6 100%);
+/* Texto con degradado de marca */
+.text-gradient {
+  background-image: linear-gradient(90deg, #5EE6E0 0%, #3B82F6 55%, #1B4BC6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+/* Cuadrícula tenue de fondo (hero) */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(94, 230, 224, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 230, 224, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+
 /* Enlace activo del menú (lo asigna main.js según la sección visible) */
 .nav-link.is-active {
-  color: #E8562A;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
-.nav-link.is-active::after {
-  transform: scaleX(1);
+
+/* Barra flotante: se compacta al hacer scroll */
+[data-navbar].is-scrolled {
+  box-shadow: 0 10px 30px -12px rgba(6, 10, 19, 0.6);
 }
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -6px;
-  height: 2px;
-  background: currentColor;
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
+
+/* Trazos animados del gráfico del hero */
+.circuit-trace {
+  stroke-dasharray: 6 10;
+  animation: trace 3s linear infinite;
+}
+@keyframes trace {
+  to { stroke-dashoffset: -64; }
 }
 
 /* Aparición suave al hacer scroll */
@@ -50,4 +60,5 @@ section[id] {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .circuit-trace { animation: none; }
 }

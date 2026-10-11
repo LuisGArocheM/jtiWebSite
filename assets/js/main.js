@@ -1,6 +1,16 @@
 // Iconos (Lucide): reemplaza cada <i data-lucide="..."> por su SVG
 lucide.createIcons();
 
+// ---------- Barra flotante: sombra al hacer scroll ----------
+const navbar = document.querySelector('[data-navbar]');
+
+function updateNavbar() {
+  navbar.classList.toggle('is-scrolled', window.scrollY > 24);
+}
+
+updateNavbar();
+window.addEventListener('scroll', updateNavbar, { passive: true });
+
 // ---------- Menú móvil ----------
 const menuButton = document.querySelector('[data-menu-button]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
